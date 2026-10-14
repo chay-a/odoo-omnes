@@ -13,6 +13,17 @@
                        t-att-value="naturopath_school or partner.naturopath_school"
                        readonly="readonly"/>
             </div>
+            <div id="naturopath_qualification_field" t-attf-class="mb-3 #{error.get('naturopath_qualification') and 'o_has_error' or ''} col-12 col-md-6">
+                <label class="form-label fw-bold" for="naturopath_qualification">
+                    Naturopath Qualification
+                </label>
+                <input type="text"
+                       name="naturopath_qualification"
+                       id="naturopath_qualification"
+                       class="form-control"
+                       t-att-value="naturopath_qualification or partner.naturopath_qualification"
+                       readonly="readonly"/>
+            </div>
         </xpath>
     </template>
 </odoo>

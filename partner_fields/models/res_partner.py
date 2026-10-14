@@ -7,3 +7,7 @@ class ResPartner(models.Model):
     naturopath_school = fields.Char(
         string="Naturopath School"
     )
+
+    naturopath_qualification = fields.Char(
+        string="Naturopath qualification"
+    )
