@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="partner_fields.res_partner_details_form" inherit_id="website_membership_extension.res_partner_details_form">
+        <xpath expr="//div[@id='website_field']" position="after">
+            <div id="naturopath_school_field" t-attf-class="mb-3 #{error.get('naturopath_school') and 'o_has_error' or ''} col-12 col-md-6">
+                <label class="form-label fw-bold" for="naturopath_school">
+                    Naturopath School
+                </label>
+                <input type="text"
+                       name="naturopath_school"
+                       id="naturopath_school"
+                       class="form-control"
+                       t-att-value="naturopath_school or partner.naturopath_school"
+                       readonly="readonly"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

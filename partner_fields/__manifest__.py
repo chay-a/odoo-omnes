@@ -5,5 +5,6 @@
     'installable': True,
     'data': [
         'views/res_partner_view.xml',
+        'views/portal_templates.xml'
     ]
 }
