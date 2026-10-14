@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="omnes_delivery_form"
+              inherit_id="website_sale.delivery_form">
+        <xpath expr="//form[@id='o_delivery_form']" position="replace">
+
+		</xpath>
+        <!-- Parameters description:
+            - delivery_methods: The delivery methods to display, as a `delivery.carrier` recordset.
+            - selected_dm_id: The selected delivery method id.
+        -->
+<!--        <form id="o_delivery_form" class="o_delivery_form mb-4">-->
+<!--            <h4 class="fs-6 small text-uppercase fw-bolder">Choose a delivery method</h4>-->
+<!--            <ul t-if="delivery_methods" id="o_delivery_methods" class="list-group">-->
+<!--                <t t-foreach="delivery_methods" t-as="dm">-->
+<!--                    <li name="o_delivery_method" class="list-group-item text-muted o_outline">-->
+<!--                        <t t-call="website_sale.delivery_method">-->
+<!--                            <t t-set="is_selected" t-value="dm.id == selected_dm_id"/>-->
+<!--                        </t>-->
+<!--                    </li>-->
+<!--                </t>-->
+<!--            </ul>-->
+<!--            <div t-else="" class="alert alert-warning">-->
+<!--                <strong>No suitable delivery method could be found.</strong>-->
+<!--            </div>-->
+<!--        </form>-->
+    </template>
+</odoo>

@@ -1,0 +1,17 @@
+$o-color-palettes: map-merge($o-color-palettes,
+   (
+      'omnes': (
+         'o-color-1':                    #2a4b23,
+         'o-color-2':                    #63b246,
+         'o-color-3':                    #f1e93d,
+         'o-color-4':                    #ffffff,
+         'o-color-5':                    #000000,
+      ),
+   )
+);
+$o-selected-color-palettes-names: append($o-selected-color-palettes-names, 'omnes');
+$o-website-values-palettes: (
+   (
+      'color-palettes-name':              'omnes',
+   ),
+);
