@@ -7,6 +7,7 @@
     "data": [
         "security/ir.model.access.csv",
         "views/volunteering_time_views.xml",
+        "views/volunteering_action_views.xml",
         "views/menu_views.xml"
     ]
 }
