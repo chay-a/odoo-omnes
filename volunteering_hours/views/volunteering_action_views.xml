@@ -11,7 +11,7 @@
         <field name="arch" type="xml">
                 <list string="Volunteering Actions">
                     <field name="sequence" widget="handle"/>
-                    <field name="name"/>
+                    <field name="complete_name"/>
                 </list>
         </field>
     </record>
