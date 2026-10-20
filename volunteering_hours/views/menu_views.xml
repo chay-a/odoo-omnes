@@ -2,6 +2,9 @@
 <odoo>
     <menuitem id="volunteering_menu_action" name="Volunteering">
         <menuitem id="volunteering_time_menu_action" action="volunteering_time_action" name="Volunteering Time"/>
-        <menuitem id="volunteering_action_menu_action" action="volunteering_action_action" name="Volunteering Action"/>
+        <menuitem id="volunteering_configuration" name="Configuration">
+            <menuitem id="volunteering_action_menu_action" action="volunteering_action_action" name="Volunteering Action"/>
+            <menuitem id="volunteering_place_menu_action" action="volunteering_place_action" name="Volunteering Place"/>
+        </menuitem>
     </menuitem>
 </odoo>
