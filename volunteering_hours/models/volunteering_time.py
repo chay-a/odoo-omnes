@@ -6,3 +6,4 @@ class VolunteeringTime(models.Model):
 
     date = fields.Date(string="Date", required=True)
     action_id = fields.Many2one("volunteering_action", string="Action", required=True)
+    place_id = fields.Many2one("volunteering_place", string="Place", required=True)
