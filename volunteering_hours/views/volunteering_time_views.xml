@@ -10,9 +10,10 @@
             <field name="model">volunteering_time</field>
             <field name="arch" type="xml">
                     <list string="Volunteering Times">
+                        <field name="date"/>
+                        <field name="hours"/>
                         <field name="action_id"/>
                         <field name="place_id"/>
-                        <field name="date"/>
                     </list>
             </field>
      </record>
