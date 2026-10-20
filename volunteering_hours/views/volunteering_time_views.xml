@@ -5,5 +5,15 @@
         <field name="res_model">volunteering_time</field>
         <field name="view_mode">list,form</field>
     </record>
-
+     <record id="volunteering_time_tree" model="ir.ui.view">
+            <field name="name">volunteering_time.list</field>
+            <field name="model">volunteering_time</field>
+            <field name="arch" type="xml">
+                    <list string="Volunteering Times">
+                        <field name="action_id"/>
+                        <field name="place_id"/>
+                        <field name="date"/>
+                    </list>
+            </field>
+     </record>
 </odoo>
