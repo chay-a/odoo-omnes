@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="volunteering_time_menu_action" action="volunteering_time_action" name="Volunteering"/>
+</odoo>
