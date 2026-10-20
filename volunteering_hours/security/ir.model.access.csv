@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_volunteering_hours_group_user,access_volunteering_hours_user,model_volunteering_hours,base.group_user,1,1,1,1
+access_volunteering_hours_group_portal,access_volunteering_hours_portal,model_volunteering_hours,base.group_portal,1,1,1,0
