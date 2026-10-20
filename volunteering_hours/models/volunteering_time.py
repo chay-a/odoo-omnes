@@ -8,3 +8,4 @@ class VolunteeringTime(models.Model):
     action_id = fields.Many2one("volunteering_action", string="Action", required=True)
     place_id = fields.Many2one("volunteering_place", string="Place", required=True)
     hours = fields.Float(string="Hours", required=True, help="ex. 2,5 for 2 hours and 30 minutes")
+    partner_id = fields.Many2one("res.partner", string="Partner", required=True)
