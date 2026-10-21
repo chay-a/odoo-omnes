@@ -1,4 +1,5 @@
 from odoo import models, fields
+from odoo.api import depends
 
 
 class VolunteeringTime(models.Model):
