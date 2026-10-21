@@ -6,5 +6,9 @@
             <menuitem id="volunteering_action_menu_action" action="volunteering_action_action" name="Volunteering Action"/>
             <menuitem id="volunteering_place_menu_action" action="volunteering_place_action" name="Volunteering Place"/>
         </menuitem>
+        <menuitem id="volunteering_analysis" name="Analysis">
+            <menuitem id="volunteering_time_analysis_menu_action" name="Partner" action="volunteering_time_analysis_action"/>
+            <menuitem id="volunteering_time_action_analysis_menu_action" name="Actions" action="volunteering_time_action_analysis_action"/>
+        </menuitem>
     </menuitem>
 </odoo>

@@ -3,7 +3,7 @@
     <record id="volunteering_time_action" model="ir.actions.act_window">
         <field name="name">Volunteering time</field>
         <field name="res_model">volunteering_time</field>
-        <field name="view_mode">list,form,pivot</field>
+        <field name="view_mode">list,form</field>
     </record>
      <record id="volunteering_time_tree" model="ir.ui.view">
             <field name="name">volunteering_time.list</field>
@@ -18,15 +18,36 @@
                     </list>
             </field>
      </record>
-    <record id="volunteering_time_pivot" model="ir.ui.view">
-        <field name="name">volunteering_time.pivot</field>
+    <record id="volunteering_action_pivot" model="ir.ui.view">
+        <field name="name">volunteering_action.pivot</field>
         <field name="model">volunteering_time</field>
         <field name="arch" type="xml">
-            <pivot string="Partner by hours">
+            <pivot string="Action by hours" default_order="hours desc">
                 <field name="partner_id" type="row"/>
-                <field name="partner_id.email" type="col"/>
-                <field name="hours" type="measure"/>
+                <field name="hours" type="measure" />
             </pivot>
         </field>
+    </record>
+    <record id="volunteering_action_graph" model="ir.ui.view">
+        <field name="name">volunteering_action.graph</field>
+        <field name="model">volunteering_time</field>
+        <field name="arch" type="xml">
+            <graph string="Action by hours" type="pie">
+                <field name="partner_id" type="row"/>
+                <field name="hours" type="measure"/>
+            </graph>
+        </field>
+    </record>
+    <record id="volunteering_time_analysis_action" model="ir.actions.act_window">
+        <field name="name">Volunteering time analysis</field>
+        <field name="res_model">volunteering_time</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="context">{'group_by':['partner_id']}</field>
+    </record>
+    <record id="volunteering_time_action_analysis_action" model="ir.actions.act_window">
+        <field name="name">Volunteering time action analysis</field>
+        <field name="res_model">volunteering_time</field>
+        <field name="view_mode">graph,pivot</field>
+        <field name="context">{'group_by':['action_id']}</field>
     </record>
 </odoo>
