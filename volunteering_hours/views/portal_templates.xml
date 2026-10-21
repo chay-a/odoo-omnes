@@ -33,7 +33,7 @@
         <t t-call="portal.portal_layout">
             <div class="o_portal_index_card col-12 order-0 container">
                 <div class="d-flex justify-content-between">
-                    <p>Total hours: <span t-field="partner.total_volunteering_hours" t-options="{'widget': 'float_time'}" /></p>
+                    <p class="fs-3">Total hours: <span class="fw-bold" t-field="partner.total_volunteering_hours" t-options="{'widget': 'float_time'}" /></p>
                 </div>
                 <div class="row gap-3">
                     <t t-foreach="volunteering_times" t-as="volunteering">
