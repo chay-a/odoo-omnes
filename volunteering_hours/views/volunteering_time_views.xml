@@ -3,7 +3,7 @@
     <record id="volunteering_time_action" model="ir.actions.act_window">
         <field name="name">Volunteering time</field>
         <field name="res_model">volunteering_time</field>
-        <field name="view_mode">list,form</field>
+        <field name="view_mode">list,form,pivot</field>
     </record>
      <record id="volunteering_time_tree" model="ir.ui.view">
             <field name="name">volunteering_time.list</field>
@@ -18,4 +18,15 @@
                     </list>
             </field>
      </record>
+    <record id="volunteering_time_pivot" model="ir.ui.view">
+        <field name="name">volunteering_time.pivot</field>
+        <field name="model">volunteering_time</field>
+        <field name="arch" type="xml">
+            <pivot string="Partner by hours">
+                <field name="partner_id" type="row"/>
+                <field name="partner_id.email" type="col"/>
+                <field name="hours" type="measure"/>
+            </pivot>
+        </field>
+    </record>
 </odoo>
