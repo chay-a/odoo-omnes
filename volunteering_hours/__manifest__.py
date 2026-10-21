@@ -9,6 +9,7 @@
         "views/volunteering_time_views.xml",
         "views/volunteering_action_views.xml",
         "views/volunteering_place_views.xml",
-        "views/menu_views.xml"
+        "views/menu_views.xml",
+        "views/portal_templates.xml",
     ]
 }

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="portal_my_home_volunteering"
+              name="Portal : Volunteering"
+              inherit_id="portal.portal_my_home"
+              priority="20">
+        <div id="portal_client_category" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Volunteering</t>
+                <t t-set="url" t-value="'/my/volunteering'"/>
+<!--                <t-->
+<!--                    t-set="icon"-->
+<!--                    t-value="'/membership_portal/static/icons/portal_icon.svg'"-->
+<!--                />-->
+                <t t-set="text">View your volunteering hours</t>
+                <t t-set="placeholder_count">1</t>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+    <template
+        id="portal_my_volunteering_breadcrumbs"
+        name="My Volunteering: Breadcrumbs"
+        inherit_id="portal.portal_breadcrumbs"
+    >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li class="breadcrumb-item active">
+                Volunteering
+            </li>
+        </xpath>
+    </template>
+    <template id="portal_my_volunteering" name="My Volunteering">
+        <t t-call="portal.portal_layout">
+            <div class="o_portal_index_card col-12 order-0">
+                <t t-foreach="volunteering_times" t-as="volunteering">
+                    <div class="border-black d-flex- flex-column align-items-center">
+                        <p t-field="volunteering.date"/>
+                        <p t-out="volunteering.action_id.name"/>
+                        <p t-out="volunteering.place_id.name"/>
+                        <p t-out="volunteering.hours"/>
+                    </div>
+                </t>
+            </div>
+        </t>
+    </template>
+</odoo>
