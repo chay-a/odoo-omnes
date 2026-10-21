@@ -32,7 +32,7 @@
     <template id="portal_my_volunteering" name="My Volunteering">
         <t t-call="portal.portal_layout">
             <div class="o_portal_index_card col-12 order-0 container">
-                <div class="row gap-3 justify-content-between">
+                <div class="row gap-3">
                     <t t-foreach="volunteering_times" t-as="volunteering">
                         <div class="col-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
                             <p t-out="volunteering.action_id.name" class="text-truncate text-uppercase" t-att-title="volunteering.action_id.name"/>
