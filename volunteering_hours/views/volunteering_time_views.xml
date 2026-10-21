@@ -38,15 +38,28 @@
             </graph>
         </field>
     </record>
+    <record id="volunteering_action_search" model="ir.ui.view">
+        <field name="name">volunteering_action.search</field>
+        <field name="model">volunteering_time</field>
+        <field name="arch" type="xml">
+            <search string="Volunteering analysis">
+                <field name="date"/>
+                 <separator/>
+                <filter string="Date" name="year" date="date" default_period="year"/>
+            </search>
+        </field>
+    </record>
     <record id="volunteering_time_analysis_action" model="ir.actions.act_window">
         <field name="name">Volunteering time analysis</field>
         <field name="res_model">volunteering_time</field>
+        <field name="search_view_id" ref="volunteering_action_search"/>
         <field name="view_mode">graph,pivot</field>
         <field name="context">{'group_by':['partner_id']}</field>
     </record>
     <record id="volunteering_time_action_analysis_action" model="ir.actions.act_window">
         <field name="name">Volunteering time action analysis</field>
         <field name="res_model">volunteering_time</field>
+        <field name="search_view_id" ref="volunteering_action_search"/>
         <field name="view_mode">graph,pivot</field>
         <field name="context">{'group_by':['action_id']}</field>
     </record>
