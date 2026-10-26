@@ -19,6 +19,7 @@ class VolunteeringPortal(CustomerPortal):
             domain.append(('date', '<=', selected_year + '-12-31'))
         volunteering_years = {date.year for date in volunteering_times.mapped('date')}
         volunteering_times = volunteering_times.search(domain, order='date desc')
+        total_hours = self._get_total_hours(volunteering_times.mapped("hours"))
         years_filter = {
             "0": "All Years",
         }
@@ -32,6 +33,13 @@ class VolunteeringPortal(CustomerPortal):
         values = {
             "partner": partner,
             "volunteering_times": volunteering_times,
-            "year_filter_props": year_filter_props
+            "year_filter_props": year_filter_props,
+            "total_hours": total_hours,
         }
         return request.render("volunteering_hours.portal_my_volunteering", values)
+
+    def _get_total_hours(self, volunteering_hours):
+        float_hours = sum(volunteering_hours)
+        hours, minutes = divmod(float_hours * 60, 60)
+        time_str = "{:02d}h{:02d}".format(int(hours), int(minutes))
+        return time_str
