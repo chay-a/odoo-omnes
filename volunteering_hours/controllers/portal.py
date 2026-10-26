@@ -1,4 +1,5 @@
 import json
+from datetime import datetime
 
 from odoo import http
 from odoo.addons.portal.controllers.portal import CustomerPortal
@@ -48,6 +49,7 @@ class VolunteeringPortal(CustomerPortal):
             "volunteering_times": volunteering_times,
             "year_filter_props": year_filter_props,
             "total_hours": total_hours,
+            "currentYear": datetime.now().year,
             'pager': pager,
         }
         return request.render("volunteering_hours.portal_my_volunteering", values)
