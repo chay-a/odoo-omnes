@@ -49,6 +49,11 @@
                             <p t-out="volunteering.place_id.name" class="mb-0"/>
                         </div>
                     </t>
+                    <div class="volunteering_pager form-inline justify-content-center mt-3 d-flex">
+                        <t t-call="website.pager">
+                        <t t-set="_classes">mt-2 ml-md-2</t>
+                        </t>
+                    </div>
                 </div>
             </div>
         </t>

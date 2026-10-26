@@ -9,8 +9,8 @@ _logger = logging.getLogger(__name__)
 
 
 class VolunteeringPortal(CustomerPortal):
-    @http.route("/my/volunteering", auth="user", website=True)
-    def volunteering(self, selected_year='', **kwargs):
+    @http.route(["/my/volunteering", "/my/volunteering/page/<int:page>"], auth="user", website=True)
+    def volunteering(self, selected_year='', page=0,  **kwargs):
         partner = request.env.user.partner_id
         domain = [('partner_id', '=', partner.id)]
         volunteering_times = request.env['volunteering_time'].search(domain, order='date desc')
@@ -30,11 +30,25 @@ class VolunteeringPortal(CustomerPortal):
             "years": years_filter,
             "default" : "0"
         }
+        selected_year_query = {}
+        if selected_year:
+            selected_year_query = {"selected_year": selected_year}
+        step = 6
+        pager = request.website.pager(
+            url='/my/volunteering',
+            total=len(volunteering_times),
+            page=page,
+            step=step,
+            url_args=selected_year_query
+        )
+        offset = pager['offset']
+        volunteering_times = volunteering_times[offset:offset + step]
         values = {
             "partner": partner,
             "volunteering_times": volunteering_times,
             "year_filter_props": year_filter_props,
             "total_hours": total_hours,
+            'pager': pager,
         }
         return request.render("volunteering_hours.portal_my_volunteering", values)
 
