@@ -37,7 +37,7 @@
                     <owl-component name="volunteering_hours.YearFilter"
                                t-att-props="json.dumps(year_filter_props)"/>
                 </div>
-                <div class="row gap-3">
+                <div class="row gap-3 justify-content-center">
                     <t t-foreach="volunteering_times" t-as="volunteering">
                         <div class="col-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
                             <p t-out="volunteering.action_id.name" class="text-truncate text-uppercase" t-att-title="volunteering.action_id.name"/>
