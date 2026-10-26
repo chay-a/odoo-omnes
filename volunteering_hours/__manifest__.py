@@ -11,5 +11,10 @@
         "views/volunteering_place_views.xml",
         "views/menu_views.xml",
         "views/portal_templates.xml",
-    ]
+    ],
+    "assets": {
+        "web.assets_frontend": [
+            "volunteering_hours/static/src/public_components/**/*",
+        ],
+    },
 }
