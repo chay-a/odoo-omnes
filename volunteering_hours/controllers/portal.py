@@ -55,6 +55,7 @@ class VolunteeringPortal(CustomerPortal):
             "volunteering_actions": volunteering_actions,
             "volunteering_places": volunteering_places,
             'pager': pager,
+            'page': 'my_volunteering_hours'
         }
         return request.render("volunteering_hours.portal_my_volunteering", values)
 

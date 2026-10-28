@@ -24,9 +24,11 @@
         inherit_id="portal.portal_breadcrumbs"
     >
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
-            <li class="breadcrumb-item active">
-                Volunteering
-            </li>
+            <t t-if="page == 'my_volunteering_hours'">
+                <li class="breadcrumb-item active">
+                    Volunteering
+                </li>
+            </t>
         </xpath>
     </template>
     <template id="portal_my_volunteering" name="My Volunteering">
