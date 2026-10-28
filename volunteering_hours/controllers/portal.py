@@ -2,6 +2,7 @@ from datetime import datetime
 
 from odoo import http
 from odoo.addons.portal.controllers.portal import CustomerPortal
+from odoo.exceptions import ValidationError
 from odoo.http import request, route
 
 import logging
@@ -71,3 +72,25 @@ class VolunteeringPortal(CustomerPortal):
         return {
             'redirect_url': "/my/volunteering",
         }
+
+    @route("/my/volunteering/new", auth="user", website=True, methods=['POST'])
+    def new_volunteering_time(self, **kwargs):
+        partner = request.env.user.partner_id.id
+        missing_fields = self._required_fields() - kwargs.keys()
+        _logger.info(f"args: {missing_fields}, kwargs: {kwargs}")
+        if any(missing_fields):
+            raise ValidationError(f"Missing required fields: {missing_fields}")
+        volunteering_action = request.env['volunteering_action'].search([('id', '=', kwargs['action_id'])])
+        if not volunteering_action:
+            raise ValidationError(f"Invalid action id: {kwargs['action_id']}")
+        volunteering_place = request.env['volunteering_place'].search([('id', '=', kwargs['place_id'])])
+        if not volunteering_place:
+            raise ValidationError(f"Invalid place id: {kwargs['place_id']}")
+        kwargs['partner_id'] = partner
+        volunteering_time = request.env['volunteering_time'].sudo().create(kwargs)
+        if not volunteering_time:
+            raise ValidationError("Failed to create volunteering time")
+        return request.redirect("/my/volunteering")
+
+    def _required_fields(self):
+        return ['date', 'hours', 'action_id', 'place_id']

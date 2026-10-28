@@ -43,26 +43,28 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
                                 </div>
                                 <div class="modal-body">
-                                    <form>
+                                    <form id="volunteering-create-form" method="POST" action="/my/volunteering/new">
                                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                         <div class="mb-3">
                                             <div class="d-flex gap-1 align-items-center">
-                                                <label for="date" class="form-label">Date</label>
+                                                <label for="date" class="form-label">Date <span class="text-danger">*</span></label>
                                                 <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Date of the event, or the first day"/>
                                             </div>
-                                            <input type="date" class="form-control" id="date" />
+                                            <input type="date" name="date" class="form-control" id="date" required="true"/>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="action" class="form-label">Object of the action</label>
-                                            <select id="action" class="form-select" aria-label="Default select example">
+                                            <label for="action_id" class="form-label">Object of the action <span class="text-danger">*</span></label>
+                                            <select id="action_id" name="action_id" class="form-select" aria-label="Default select example" required="true">
+                                                <option value="" disabled="true" selected="true">Select your option</option>
                                                 <option t-foreach="volunteering_actions" t-as="action" t-key="action.id" t-att-value="action.id">
                                                     <t t-esc="action.complete_name" />
                                                 </option>
                                             </select>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="place" class="form-label">Place</label>
-                                            <select id="place" class="form-select" aria-label="Default select example">
+                                            <label for="place_id" class="form-label">Place <span class="text-danger">*</span></label>
+                                            <select id="place_id" name="place_id" class="form-select" aria-label="Default select example" required="true">
+                                                <option value="" disabled="true" selected="true">Select your option</option>
                                                 <option t-foreach="volunteering_places" t-as="place" t-key="place.id" t-att-value="place.id">
                                                     <t t-esc="place.name" />
                                                 </option>
@@ -70,16 +72,16 @@
                                         </div>
                                         <div class="mb-3">
                                             <div class="d-flex gap-1 align-items-center">
-                                                <label for="hours" class="form-label">Hours</label>
+                                                <label for="hours" class="form-label">Hours <span class="text-danger">*</span></label>
                                                 <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Value must be a decimal ex. 2.5 = 2h30, 3 = 3h, 1.75 = 1h45"/>
                                             </div>
-                                            <input type="float" aria-describedby="hoursdescription" class="form-control" id="hours" step="0.1" min="0" />
+                                            <input type="float" name="hours" class="form-control" id="hours" step="0.1" min="0" required="true"/>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary" id="form-save">Save changes</button>
+                                    <input type="submit" class="btn btn-primary" form="volunteering-create-form" value="Save"/>
                                 </div>
                             </div>
                         </div>
