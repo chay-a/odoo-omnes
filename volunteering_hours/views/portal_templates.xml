@@ -32,7 +32,7 @@
     <template id="portal_my_volunteering" name="My Volunteering">
         <t t-call="portal.portal_layout">
             <div class="o_portal_index_card col-12 order-0 container">
-                <div class="d-flex gap-3 align-items-center mb-3">
+                <div class="d-flex gap-3 align-items-center mb-3 flex-wrap">
                     <h1 class="m-0">Volunteering Times</h1>
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#VolunteeringCreateFormModal">Add</button>
                     <div class="modal fade" id="VolunteeringCreateFormModal" tabindex="-1" role="dialog" aria-labelledby="VolunteeringCreateFormModalTitle" aria-hidden="true">
@@ -85,14 +85,14 @@
                         </div>
                     </div>
                 </div>
-                <div class="d-flex justify-content-between">
+                <div class="d-flex justify-content-between flex-wrap mb-3">
                     <p class="fs-3">Total hours: <span class="fw-bold" t-out="total_hours" /></p>
                     <owl-component name="volunteering_hours.YearFilter"
                                t-att-props="json.dumps(year_filter_props)"/>
                 </div>
                 <div class="row gap-3 justify-content-center">
                     <t t-foreach="volunteering_times" t-as="volunteering">
-                        <div class="col-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
+                        <div class="col-11 col-sm-5 col-md-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
                             <p t-out="volunteering.action_id.name" class="text-truncate text-uppercase" t-att-title="volunteering.action_id.name"/>
                             <div class="d-flex gap-1 text-primary">
                                 <p t-field="volunteering.date"/>
