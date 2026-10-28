@@ -43,12 +43,16 @@ class VolunteeringPortal(CustomerPortal):
         )
         offset = pager['offset']
         volunteering_times = volunteering_times[offset:offset + step]
+        volunteering_actions = request.env['volunteering_action'].search([])
+        volunteering_places = request.env['volunteering_place'].search([])
         values = {
             "partner": partner,
             "volunteering_times": volunteering_times,
             "year_filter_props": year_filter_props,
             "total_hours": total_hours,
             "currentYear": datetime.now().year,
+            "volunteering_actions": volunteering_actions,
+            "volunteering_places": volunteering_places,
             'pager': pager,
         }
         return request.render("volunteering_hours.portal_my_volunteering", values)

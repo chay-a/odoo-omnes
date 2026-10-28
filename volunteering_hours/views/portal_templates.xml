@@ -32,8 +32,58 @@
     <template id="portal_my_volunteering" name="My Volunteering">
         <t t-call="portal.portal_layout">
             <div class="o_portal_index_card col-12 order-0 container">
-                <div class="d-flex gap-3">
-                    <h1>Volunteering Times</h1>
+                <div class="d-flex gap-3 align-items-center mb-3">
+                    <h1 class="m-0">Volunteering Times</h1>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#VolunteeringCreateFormModal">Add</button>
+                    <div class="modal fade" id="VolunteeringCreateFormModal" tabindex="-1" role="dialog" aria-labelledby="VolunteeringCreateFormModalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="volunteeringCreateTitle">Add new volunteering time</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                                </div>
+                                <div class="modal-body">
+                                    <form>
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="mb-3">
+                                            <div class="d-flex gap-1 align-items-center">
+                                                <label for="date" class="form-label">Date</label>
+                                                <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Date of the event, or the first day"/>
+                                            </div>
+                                            <input type="date" class="form-control" id="date" />
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="action" class="form-label">Object of the action</label>
+                                            <select id="action" class="form-select" aria-label="Default select example">
+                                                <option t-foreach="volunteering_actions" t-as="action" t-key="action.id" t-att-value="action.id">
+                                                    <t t-esc="action.complete_name" />
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="place" class="form-label">Place</label>
+                                            <select id="place" class="form-select" aria-label="Default select example">
+                                                <option t-foreach="volunteering_places" t-as="place" t-key="place.id" t-att-value="place.id">
+                                                    <t t-esc="place.name" />
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex gap-1 align-items-center">
+                                                <label for="hours" class="form-label">Hours</label>
+                                                <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Value must be a decimal ex. 2.5 = 2h30, 3 = 3h, 1.75 = 1h45"/>
+                                            </div>
+                                            <input type="float" aria-describedby="hoursdescription" class="form-control" id="hours" step="0.1" min="0" />
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary" id="form-save">Save changes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between">
                     <p class="fs-3">Total hours: <span class="fw-bold" t-out="total_hours" /></p>
