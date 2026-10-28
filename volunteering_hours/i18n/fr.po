@@ -1,0 +1,353 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* volunteering_hours
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-10-28 12:00+0000\n"
+"PO-Revision-Date: 2026-10-28 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: volunteering_hours
+#: model:ir.model,name:volunteering_hours.model_volunteering_action
+msgid "Volunteering Action"
+msgstr "Action de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.model,name:volunteering_hours.model_volunteering_place
+msgid "Volunteering Place"
+msgstr "Lieu de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.model,name:volunteering_hours.model_volunteering_time
+msgid "Volunteering Time"
+msgstr "Heures de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.model,name:volunteering_hours.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__name
+msgid "Action name"
+msgstr "Nom de l'action"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__complete_name
+msgid "Complete Name"
+msgstr "Nom complet"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__sequence
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_place__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__parent_id
+msgid "Parent Action"
+msgstr "Action parente"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__parent_path
+msgid "Parent Path"
+msgstr "Chemin parent"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_action__child_id
+msgid "Child Actions"
+msgstr "Actions enfants"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_place__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_time__date
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_action_search
+msgid "Date"
+msgstr "Date"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_time__action_id
+msgid "Action"
+msgstr "Action"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_time__place_id
+msgid "Place"
+msgstr "Département"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_time__hours
+msgid "Hours"
+msgstr "Heures"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,help:volunteering_hours.field_volunteering_time__hours
+msgid "ex. 2,5 for 2 hours and 30 minutes"
+msgstr "ex. 2,5 pour 2 heures et 30 minutes"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_volunteering_time__partner_id
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_time_analysis_menu_action
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_res_partner__volunteering_time_ids
+#: model:ir.model.fields,field_description:volunteering_hours.field_res_users__volunteering_time_ids
+msgid "Volunteering Time"
+msgstr "Session de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_res_partner__total_volunteering_hours
+#: model:ir.model.fields,field_description:volunteering_hours.field_res_users__total_volunteering_hours
+msgid "Total Volunteering Hours"
+msgstr "Total des heures de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_menu_action
+msgid "Volunteering"
+msgstr "Bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_time_menu_action
+msgid "Volunteering Time"
+msgstr "Session de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_action_menu_action
+msgid "Volunteering Action"
+msgstr "Actions de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_place_menu_action
+msgid "Volunteering Place"
+msgstr "Lieu de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_analysis
+msgid "Analysis"
+msgstr "Analyse"
+
+#. module: volunteering_hours
+#: model:ir.ui.menu,name:volunteering_hours.volunteering_time_action_analysis_menu_action
+msgid "Actions"
+msgstr "Actions"
+
+#. module: volunteering_hours
+#: model:ir.actions.act_window,name:volunteering_hours.volunteering_time_action
+msgid "Volunteering time"
+msgstr "Session de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.actions.act_window,name:volunteering_hours.volunteering_time_analysis_action
+msgid "Volunteering time analysis"
+msgstr "Analyse des sessions de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.actions.act_window,name:volunteering_hours.volunteering_time_action_analysis_action
+msgid "Volunteering time action analysis"
+msgstr "Analyse des actions de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.actions.act_window,name:volunteering_hours.volunteering_action_action
+msgid "Volunteering Action"
+msgstr "Actions de bénévolat"
+
+#. module: volunteering_hours
+#: model:ir.actions.act_window,name:volunteering_hours.volunteering_place_action
+msgid "Volunteering Place"
+msgstr "Lieu de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_time_tree
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Volunteering Times"
+msgstr "Sessions de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_action_pivot
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_action_graph
+msgid "Action by hours"
+msgstr "Actions par heures"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_action_search
+msgid "Volunteering analysis"
+msgstr "Analyse du bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_action_tree
+msgid "Volunteering Actions"
+msgstr "Actions de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.volunteering_place_tree
+msgid "Volunteering Place"
+msgstr "Lieux de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_home_volunteering
+msgid "Portal : Volunteering"
+msgstr "Portail : Bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_home_volunteering
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering_breadcrumbs
+msgid "Volunteering"
+msgstr "Bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_home_volunteering
+msgid "View your volunteering hours"
+msgstr "Consulter vos heures de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering_breadcrumbs
+msgid "My Volunteering: Breadcrumbs"
+msgstr "Mon bénévolat : Fil d'Ariane"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "My Volunteering"
+msgstr "Mon bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Add new volunteering time"
+msgstr "Ajouter des sessions de bénévolat"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Close"
+msgstr "Fermer"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Date <span class=\"text-danger\">*</span>"
+msgstr "Date <span class=\"text-danger\">*</span>"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Date of the event, or the first day"
+msgstr "Date de l'événement, ou premier jour"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Object of the action <span class=\"text-danger\">*</span>"
+msgstr "Objet de l'action <span class=\"text-danger\">*</span>"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Select your option"
+msgstr "Sélectionnez votre option"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "<option value=\"\" disabled=\"true\" selected=\"true\">Select your option</option>"
+msgstr "<option value=\"\" disabled=\"true\" selected=\"true\">Sélectionnez votre option</option>"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Place <span class=\"text-danger\">*</span>"
+msgstr "Département <span class=\"text-danger\">*</span>"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Hours <span class=\"text-danger\">*</span>"
+msgstr "Heures <span class=\"text-danger\">*</span>"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Value must be a decimal ex. 2.5 = 2h30, 3 = 3h, 1.75 = 1h45"
+msgstr "La valeur doit être un décimal ex. 2,5 = 2h30, 3 = 3h, 1,75 = 1h45"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Total hours:"
+msgstr "Total des heures :"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Total hours: <span class=\"fw-bold\" t-out=\"total_hours\" />"
+msgstr "Total des heures : <span class=\"fw-bold\" t-out=\"total_hours\" />"
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/models/volunteering_action.py:0
+msgid "You cannot create recursive actions."
+msgstr "Vous ne pouvez pas créer d'actions récursives."
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/controllers/portal.py:0
+msgid "All Years"
+msgstr "Toutes les années"
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/controllers/portal.py:0
+msgid "Missing required fields: %s"
+msgstr "Champs obligatoires manquants : %s"
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/controllers/portal.py:0
+msgid "Invalid action id: %s"
+msgstr "Identifiant d'action non valide : %s"
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/controllers/portal.py:0
+msgid "Invalid place id: %s"
+msgstr "Identifiant de lieu non valide : %s"
+
+#. module: volunteering_hours
+#. odoo-python
+#: code:addons/volunteering_hours/controllers/portal.py:0
+msgid "Failed to create volunteering time"
+msgstr "Échec de l'enregistrement de la session de bénévolat"
+
+#. module: volunteering_hours
+#. odoo-javascript
+#: code:addons/volunteering_hours/static/src/public_components/delete_button.xml:0
+msgid "Delete"
+msgstr "Supprimer"
+
+#. module: volunteering_hours
+#. odoo-javascript
+#: code:addons/volunteering_hours/static/src/public_components/delete_button.xml:0
+msgid "Cannot delete sessions from past years"
+msgstr "Impossible de supprimer les sessions des années passées"
+
+#. module: volunteering_hours
+#: model_terms:ir.ui.view,arch_db:volunteering_hours.portal_my_volunteering
+msgid "Save"
+msgstr "Enregistrer"
