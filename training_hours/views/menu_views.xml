@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="training_menu_action" name="Training">
+        <menuitem id="training_session_menu_action" action="training_session_action" name="Training Session"/>
+        <menuitem id="training_technique_menu_action" action="training_technique_action" name="Training Technique"/>
+    </menuitem>
+</odoo>

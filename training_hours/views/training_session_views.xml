@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="training_session_action" model="ir.actions.act_window">
+        <field name="name">Training Session</field>
+        <field name="res_model">training_session</field>
+        <field name="view_mode">list,form</field>
+    </record>
+     <record id="training_session_tree" model="ir.ui.view">
+            <field name="name">training_session.list</field>
+            <field name="model">training_session</field>
+            <field name="arch" type="xml">
+                    <list string="Training Session">
+                        <field name="partner_id"/>
+                        <field name="training_technique_ids"/>
+                        <field name="type"/>
+                        <field name="hours"/>
+                        <field name="year"/>
+                    </list>
+            </field>
+     </record>
+</odoo>

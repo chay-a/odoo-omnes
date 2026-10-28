@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="training_technique_action" model="ir.actions.act_window">
+        <field name="name">Training Technique</field>
+        <field name="res_model">training_technique</field>
+        <field name="view_mode">list,form</field>
+    </record>
+    <record id="training_technique_tree" model="ir.ui.view">
+        <field name="name">training_technique.list</field>
+        <field name="model">training_technique</field>
+        <field name="arch" type="xml">
+                <list string="Training Technique">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </list>
+        </field>
+    </record>
+</odoo>
