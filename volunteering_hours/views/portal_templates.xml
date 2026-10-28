@@ -47,9 +47,7 @@
                                 <p t-field="volunteering.hours" t-options="{'widget': 'float_time'}"/>
                             </div>
                             <p t-out="volunteering.place_id.name" class="mb-0"/>
-                            <div class="d-grid mt-2">
-                                <button type="button" t-attf-class="btn btn-sm rounded-1 #{'btn-outline-danger' if volunteering.date.year == currentYear else 'btn-outline-grey'}" t-att-disabled="volunteering.date.year != currentYear" t-att-title="'Only current year\'s sessions can be deleted' if volunteering.date.year != currentYear else 'Delete'" style="pointer-events: auto;">Delete</button>
-                            </div>
+                            <owl-component name="volunteering_hours.DeleteButton" t-att-props="json.dumps({'deleteURL': '/my/volunteering','volunteeringYear': volunteering.date.year, 'volunteeringId': volunteering.id, 'currentYear':currentYear})"/>
                         </div>
                     </t>
                     <div class="volunteering_pager form-inline justify-content-center mt-3 d-flex">
