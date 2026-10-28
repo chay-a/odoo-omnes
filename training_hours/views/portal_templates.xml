@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <template id="portal_my_home_training"
+              name="Portal : Training"
+              inherit_id="portal.portal_my_home"
+              priority="20">
+        <div id="portal_client_category" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="title">Training</t>
+                <t t-set="url" t-value="'/my/training_hours'"/>
+<!--                <t-->
+<!--                    t-set="icon"-->
+<!--                    t-value="'/membership_portal/static/icons/portal_icon.svg'"-->
+<!--                />-->
+                <t t-set="text">View your training hours</t>
+                <t t-set="placeholder_count">1</t>
+                <t t-set="config_card" t-value="True"/>
+            </t>
+        </div>
+    </template>
+    <template
+        id="portal_my_training_breadcrumbs"
+        name="My Training: Breadcrumbs"
+        inherit_id="portal.portal_breadcrumbs"
+    >
+        <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
+            <li class="breadcrumb-item active">
+                Training
+            </li>
+        </xpath>
+    </template>
+        <template id="portal_my_training" name="My Training">
+        <t t-call="portal.portal_layout">
+            <div class="o_portal_index_card col-12 order-0 container">
+                <div class="d-flex gap-3 align-items-center mb-3 flex-wrap">
+                    <h1 class="m-0">Trainings</h1>
+                </div>
+<!--                <div class="row gap-3 justify-content-center">-->
+<!--                    <t t-foreach="volunteering_times" t-as="volunteering">-->
+<!--                        <div class="col-11 col-sm-5 col-md-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">-->
+<!--                            <p t-out="volunteering.action_id.name" class="text-truncate text-uppercase" t-att-title="volunteering.action_id.name"/>-->
+<!--                            <div class="d-flex gap-1 text-primary">-->
+<!--                                <p t-field="volunteering.date"/>-->
+<!--                                <span> - </span>-->
+<!--                                <p t-field="volunteering.hours" t-options="{'widget': 'float_time'}"/>-->
+<!--                            </div>-->
+<!--                            <p t-out="volunteering.place_id.name" class="mb-0"/>-->
+<!--                            <owl-component name="volunteering_hours.DeleteButton" t-att-props="json.dumps({'deleteURL': '/my/volunteering','volunteeringYear': volunteering.date.year, 'volunteeringId': volunteering.id, 'currentYear':currentYear})"/>-->
+<!--                        </div>-->
+<!--                    </t>-->
+<!--                    <div class="volunteering_pager form-inline justify-content-center mt-3 d-flex">-->
+<!--                        <t t-call="website.pager">-->
+<!--                        <t t-set="_classes">mt-2 ml-md-2</t>-->
+<!--                        </t>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </t>
+    </template>
+</odoo>

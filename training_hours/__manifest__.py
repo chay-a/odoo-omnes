@@ -9,5 +9,6 @@
         "views/training_technique_views.xml",
         "views/training_session_views.xml",
         "views/menu_views.xml",
+        "views/portal_templates.xml",
     ],
 }
