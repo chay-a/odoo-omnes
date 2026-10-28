@@ -1,5 +1,6 @@
 import {Component} from "@odoo/owl";
 import { registry } from "@web/core/registry";
+import { rpc } from "@web/core/network/rpc";
 
 export class DeleteButton extends Component{
     static template = "volunteering_hours.DeleteButton";
@@ -8,6 +9,11 @@ export class DeleteButton extends Component{
         volunteeringYear: { type: Number, optional: false },
         volunteeringId: { type: Number, optional: false },
         currentYear: { type: String, optional: false },
+    }
+
+    async onDelete(evt) {
+        const response = await rpc(`/my/volunteering/delete/${evt.currentTarget.dataset.volunteering_id}`)
+        window.location.href = response.redirect_url
     }
 }
 

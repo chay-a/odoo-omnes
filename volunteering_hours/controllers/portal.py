@@ -1,9 +1,8 @@
-import json
 from datetime import datetime
 
 from odoo import http
 from odoo.addons.portal.controllers.portal import CustomerPortal
-from odoo.http import request
+from odoo.http import request, route
 
 import logging
 _logger = logging.getLogger(__name__)
@@ -59,3 +58,12 @@ class VolunteeringPortal(CustomerPortal):
         hours, minutes = divmod(float_hours * 60, 60)
         time_str = "{:02d}h{:02d}".format(int(hours), int(minutes))
         return time_str
+
+    @route(["/my/volunteering/delete/<int:id>"], auth="user", website=True, type="json")
+    def delete_volunteering_time(self, id=0, **kwargs):
+        volunteering_time = request.env['volunteering_time'].browse(id)
+        if volunteering_time:
+            volunteering_time.sudo().unlink()
+        return {
+            'redirect_url': "/my/volunteering",
+        }

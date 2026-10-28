@@ -8,6 +8,8 @@
                     t-att-disabled="props.volunteeringYear != props.currentYear"
                     t-att-style="props.volunteeringYear != props.currentYear ? 'pointer-events: visible;' : ''"
                     t-att-title="props.volunteeringYear == props.currentYear ? 'Delete' : 'Cannot delete sessions from past years'"
+                    t-att-data-volunteering_id="props.volunteeringId"
+                    t-on-click="onDelete"
             >Delete</button>
         </div>
     </t>
