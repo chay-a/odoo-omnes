@@ -24,36 +24,38 @@
         inherit_id="portal.portal_breadcrumbs"
     >
         <xpath expr="//ol[hasclass('o_portal_submenu')]" position="inside">
-            <li class="breadcrumb-item active">
-                Training
-            </li>
+            <t t-if="page == 'my_training_hours'">
+                <li class="breadcrumb-item active">
+                    Training
+                </li>
+            </t>
         </xpath>
     </template>
-        <template id="portal_my_training" name="My Training">
+    <template id="portal_my_training" name="My Training">
         <t t-call="portal.portal_layout">
             <div class="o_portal_index_card col-12 order-0 container">
                 <div class="d-flex gap-3 align-items-center mb-3 flex-wrap">
                     <h1 class="m-0">Trainings</h1>
                 </div>
-<!--                <div class="row gap-3 justify-content-center">-->
-<!--                    <t t-foreach="volunteering_times" t-as="volunteering">-->
-<!--                        <div class="col-11 col-sm-5 col-md-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">-->
-<!--                            <p t-out="volunteering.action_id.name" class="text-truncate text-uppercase" t-att-title="volunteering.action_id.name"/>-->
-<!--                            <div class="d-flex gap-1 text-primary">-->
-<!--                                <p t-field="volunteering.date"/>-->
-<!--                                <span> - </span>-->
-<!--                                <p t-field="volunteering.hours" t-options="{'widget': 'float_time'}"/>-->
-<!--                            </div>-->
-<!--                            <p t-out="volunteering.place_id.name" class="mb-0"/>-->
-<!--                            <owl-component name="volunteering_hours.DeleteButton" t-att-props="json.dumps({'deleteURL': '/my/volunteering','volunteeringYear': volunteering.date.year, 'volunteeringId': volunteering.id, 'currentYear':currentYear})"/>-->
-<!--                        </div>-->
-<!--                    </t>-->
-<!--                    <div class="volunteering_pager form-inline justify-content-center mt-3 d-flex">-->
-<!--                        <t t-call="website.pager">-->
-<!--                        <t t-set="_classes">mt-2 ml-md-2</t>-->
-<!--                        </t>-->
-<!--                    </div>-->
-<!--                </div>-->
+                <div class="d-flex justify-content-between flex-wrap mb-3">
+                    <p class="fs-3">Total hours: <span class="fw-bold" t-out="total_hours" /></p>
+                </div>
+                <div class="row gap-3 justify-content-center">
+                    <t t-foreach="training_sessions" t-as="training">
+                        <div class="col-11 col-sm-5 col-md-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
+                            <p t-out="training.organisation" class="text-truncate text-uppercase" t-att-title="training.organisation"/>
+                            <div class="d-flex gap-1 text-primary">
+                                <p t-field="training.hours" t-options="{'widget': 'float_time'}"/>
+                            </div>
+                            <p t-out="training.training_technique_ids.name" class="mb-0 text-truncate text-uppercase" t-att-title="training.training_technique_ids.name"/>
+                        </div>
+                    </t>
+                </div>
+                <div class="training_pager form-inline justify-content-center mt-3 d-flex">
+                    <t t-call="website.pager">
+                    <t t-set="_classes">mt-2 ml-md-2</t>
+                    </t>
+                </div>
             </div>
         </t>
     </template>
