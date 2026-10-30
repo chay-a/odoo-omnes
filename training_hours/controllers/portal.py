@@ -47,3 +47,12 @@ class TrainingPortal(CustomerPortal):
         hours, minutes = divmod(float_hours * 60, 60)
         time_str = "{:02d}h{:02d}".format(int(hours), int(minutes))
         return time_str
+
+    @http.route(["/my/training/delete/<int:id>"], auth="user", website=True, type="json")
+    def delete_training_session(self, id=0, **kwargs):
+        training_session = request.env['training_session'].browse(id)
+        if training_session:
+            training_session.unlink()
+        return {
+            'redirect_url': "/my/training_hours",
+        }

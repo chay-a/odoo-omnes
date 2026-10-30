@@ -50,6 +50,7 @@
                                 <p t-field="training.hours" t-options="{'widget': 'float_time'}"/>
                             </div>
                             <p t-out="training.training_technique_ids.name" class="mb-0 text-truncate text-uppercase" t-att-title="training.training_technique_ids.name"/>
+                            <owl-component name="training_hours.DeleteButton" t-att-props="json.dumps({'deleteURL': '/my/training/delete/','trainingId': training.id})"/>
                         </div>
                     </t>
                 </div>
