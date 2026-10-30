@@ -34,7 +34,7 @@ class VolunteeringPortal(CustomerPortal):
         selected_year_query = {}
         if selected_year:
             selected_year_query = {"selected_year": selected_year}
-        step = 6
+        step = 12
         pager = request.website.pager(
             url='/my/volunteering',
             total=len(volunteering_times),

@@ -10,7 +10,7 @@ class TrainingPortal(CustomerPortal):
     def my_training_hours(self, page=0, **kwargs):
         training_sessions = request.env['training_session'].search([('partner_id', '=', request.env.user.partner_id.id)])
         total_hours = self._get_total_hours(training_sessions.mapped('hours'))
-        step = 3
+        step = 12
         pager = request.website.pager(
             url='/my/training_hours',
             total=len(training_sessions),
