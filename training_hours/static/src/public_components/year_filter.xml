@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates xml:space="preserve">
+    <t t-name="training_hours.YearFilter">
+        <select class="form-select" name="year" id="year" t-on-change="onYearChange">
+            <option t-foreach="props.years" t-as="year" t-key="year" t-att-value="year" t-att-selected="year === props.selectedYear">
+                <t t-esc="props.years[year]" />
+            </option>
+        </select>
+    </t>
+</templates>

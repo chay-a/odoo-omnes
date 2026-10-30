@@ -39,6 +39,8 @@
                 </div>
                 <div class="d-flex justify-content-between flex-wrap mb-3">
                     <p class="fs-3">Total hours: <span class="fw-bold" t-out="total_hours" /></p>
+                    <owl-component name="training_hours.YearFilter"
+                               t-att-props="json.dumps(year_filter_props)"/>
                 </div>
                 <div class="row gap-3 justify-content-center">
                     <t t-foreach="training_sessions" t-as="training">
