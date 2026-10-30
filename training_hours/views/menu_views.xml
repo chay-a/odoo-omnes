@@ -2,6 +2,9 @@
 <odoo>
     <menuitem id="training_menu_action" name="Training">
         <menuitem id="training_session_menu_action" action="training_session_action" name="Training Session"/>
-        <menuitem id="training_technique_menu_action" action="training_technique_action" name="Training Technique"/>
+        <menuitem id="training_configuration" name="Configuration">
+            <menuitem id="training_technique_menu_action" action="training_technique_action" name="Training Technique"/>
+            <menuitem id="training_year_menu_action" action="training_year_action" name="Training Year"/>
+        </menuitem>
     </menuitem>
 </odoo>
