@@ -6,6 +6,7 @@
     "installable": True,
     "data": [
         "security/ir.model.access.csv",
+        "data/training_year_data.xml",
         "views/training_technique_views.xml",
         "views/training_year_views.xml",
         "views/training_session_views.xml",
