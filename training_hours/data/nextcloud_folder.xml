@@ -11,5 +11,15 @@
             <field name="state">code</field>
             <field name="nextcall" eval="(DateTime.now().replace(day=1) + timedelta(days=32)).strftime('%Y-%m-01 01:00:00')" />
         </record>
+        <record id="ir_cron_create_nextcloud_folder_by_taining_year" model="ir.cron">
+            <field name="name">Lifelong Training Certificate: create nextcloud folder</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">months</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="active" eval="True"/>
+            <field name="code">model._add_nextcloud_folder_for_lifelong_training()</field>
+            <field name="state">code</field>
+            <field name="nextcall" eval="(DateTime.now().replace(day=1) + timedelta(days=32)).strftime('%Y-%m-01 01:00:00')" />
+        </record>
     </data>
 </odoo>

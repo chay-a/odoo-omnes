@@ -11,6 +11,9 @@
                     <setting string="Nextcloud initial training folder URL">
                         <field name="nextcloud_initial_training_folder_url" />
                     </setting>
+                    <setting string="Nextcloud lifelong training folder URL">
+                        <field name="nextcloud_lifelong_training_folder_url" />
+                    </setting>
                 </block>
             </xpath>
         </field>
