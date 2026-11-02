@@ -10,25 +10,19 @@ _logger = logging.getLogger(__name__)
 class ResPartner(models.Model):
     _inherit = "res.partner"
 
-    nextcloud_folder_link = fields.Char(string="Nextcloud Folder Link")
-
 
     def _add_nextcloud_folder(self):
         partners = self.env["res.partner"].search([("membership_state", "=", "paid")])
 
-        nextcloud_base_url = self._get_nextcloud_base_url('training_hours.nextcloud_initial_training_folder_url')
+        nextcloud_base_url = self._get_nextcloud_base_url('training_hours.nextcloud_initial_training_folder_path')
         for partner in partners:
-            if partner.nextcloud_folder_link:
-                nextcloud_base_url = partner.nextcloud_folder_link
             url = self._get_partner_folder_url(nextcloud_base_url, partner)
-            created = self._create_folder(url)
-            if created and not partner.nextcloud_folder_link:
-                partner.write({'nextcloud_folder_link': url})
+            self._create_folder(url)
 
     def _add_nextcloud_folder_for_lifelong_training(self):
         partners = self.env["res.partner"].search([("membership_state", "=", "paid")])
         training_years = self.env["training_year"].search([])
-        nextcloud_base_url = self._get_nextcloud_base_url('training_hours.nextcloud_lifelong_training_folder_url')
+        nextcloud_base_url = self._get_nextcloud_base_url('training_hours.nextcloud_lifelong_training_folder_path')
         for partner in partners:
             for training_year in training_years:
                 training_year_url = requote_uri(f"{training_year.name}")
@@ -46,7 +40,6 @@ class ResPartner(models.Model):
         )
         try:
             response.raise_for_status()
-            return True
         except requests.exceptions.HTTPError as e:
             if response.status_code == 404:
                 self._create_folder_call(url)
@@ -67,11 +60,12 @@ class ResPartner(models.Model):
 
     def _get_nextcloud_base_url(self, base_url_field) -> str:
         params = self.env['ir.config_parameter'].sudo()
-        nextcloud_initial_training_folder_url = params.get_param(
-            base_url_field).replace("https://", "").replace("http://", "")
+        nextcloud_base_folder_path = params.get_param(
+            base_url_field)
+        nextcloud_url = params.get_param('nextcloud_teams.nextcloud_url').replace("https://", "").replace("http://", "")
         nextcloud_admin_username = params.get_param('nextcloud_teams.nextcloud_admin_username')
         nextcloud_admin_password = params.get_param('nextcloud_teams.nextcloud_admin_password')
-        return f"https://{nextcloud_admin_username}:{nextcloud_admin_password}@{nextcloud_initial_training_folder_url}"
+        return f"https://{nextcloud_admin_username}:{nextcloud_admin_password}@{nextcloud_url}/remote.php/dav/files/{nextcloud_admin_username}/{nextcloud_base_folder_path}"
 
     def _create_folder_call(self, url: str):
         response = requests.request(
@@ -82,6 +76,5 @@ class ResPartner(models.Model):
         )
         try:
             response.raise_for_status()
-            return True
         except requests.exceptions.HTTPError as e:
             _logger.error(f"Error creating nextcloud folder {url}: {e}")

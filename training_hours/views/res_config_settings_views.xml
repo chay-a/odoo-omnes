@@ -8,11 +8,11 @@
         <field name="arch" type="xml">
             <xpath expr="//block[@name='nextcloud_credentials']" position="after">
                 <block title="Nextcloud training folders" name="nextcloud_training_folders">
-                    <setting string="Nextcloud initial training folder URL">
-                        <field name="nextcloud_initial_training_folder_url" />
+                    <setting string="Nextcloud initial training folder path">
+                        <field name="nextcloud_initial_training_folder_path" />
                     </setting>
-                    <setting string="Nextcloud lifelong training folder URL">
-                        <field name="nextcloud_lifelong_training_folder_url" />
+                    <setting string="Nextcloud lifelong training folder path">
+                        <field name="nextcloud_lifelong_training_folder_path" />
                     </setting>
                 </block>
             </xpath>
