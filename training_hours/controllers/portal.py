@@ -1,5 +1,6 @@
 from odoo import http, _
 from odoo.addons.sale.controllers.portal import CustomerPortal
+from odoo.exceptions import ValidationError
 from odoo.http import request
 
 import logging
@@ -38,6 +39,9 @@ class TrainingPortal(CustomerPortal):
             'total_hours': total_hours,
             'pager': pager,
             'year_filter_props': year_filter_props,
+            'training_techniques': request.env['training_technique'].search([]),
+            'training_years': request.env['training_year'].search([]),
+            'training_types': [("lifelong_learning", "Lifelong Learning"), ("initial_learning", "Initial Learning")],
             'page': 'my_training_hours'
         }
         return request.render("training_hours.portal_my_training", values)
@@ -56,3 +60,25 @@ class TrainingPortal(CustomerPortal):
         return {
             'redirect_url': "/my/training_hours",
         }
+
+    @http.route("/my/training/new", auth="user", website=True, methods=['POST'])
+    def new_training_session(self, **kwargs):
+        partner = request.env.user.partner_id.id
+        missing_fields = self._required_training_fields() - kwargs.keys()
+        _logger.info(f"args: {self._required_training_fields()}, kwargs: {kwargs}")
+        if any(missing_fields):
+            raise ValidationError(_("Missing required fields: %s", missing_fields))
+        training_technique = request.env['training_technique'].search([('id', '=', kwargs['training_technique_ids'])])
+        if not training_technique:
+            raise ValidationError(_("Invalid technique id: %s", kwargs['training_technique_ids']))
+        training_year = request.env['training_year'].search([('id', '=', kwargs['year_id'])])
+        if not training_year:
+            raise ValidationError(_("Invalid year id: %s", kwargs['year_id']))
+        kwargs['partner_id'] = partner
+        training_session = request.env['training_session'].sudo().create(kwargs)
+        if not training_session:
+            raise ValidationError(_("Failed to create training session"))
+        return request.redirect("/my/training_hours")
+
+    def _required_training_fields(self):
+        return ['organisation', 'type', 'hours', 'training_technique_ids', 'year_id']

@@ -36,6 +36,73 @@
             <div class="o_portal_index_card col-12 order-0 container">
                 <div class="d-flex gap-3 align-items-center mb-3 flex-wrap">
                     <h1 class="m-0">Trainings</h1>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#TrainingCreateFormModal">Add</button>
+                    <div class="modal fade" id="TrainingCreateFormModal" tabindex="-1" role="dialog" aria-labelledby="TrainingCreateFormModalTitle" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="trainingCreateTitle">Add new training time</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
+                                </div>
+                                <div class="modal-body">
+                                    <form id="training-create-form" method="POST" action="/my/training/new">
+                                        <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                                        <div class="mb-3">
+                                            <div class="d-flex gap-1 align-items-center">
+                                                <label for="organisation" class="form-label">Organisation <span class="text-danger">*</span></label>
+                                                <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Training organisation (must be written on the certificate)"/>
+                                            </div>
+                                            <input type="text" name="organisation" class="form-control" id="organisation" required="true"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Type <span class="text-danger">*</span></label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="type" id="lifelong_learning" value="lifelong_learning" checked="True"/>
+                                                <label class="form-check-label" for="lifelong_learning">
+                                                    Lifelong Learning
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="type" id="initial_learning" value="initial_learning"/>
+                                                <label class="form-check-label" for="initial_learning">
+                                                    Initial Learning
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex gap-1 align-items-center">
+                                                <label for="hours" class="form-label">Hours <span class="text-danger">*</span></label>
+                                                <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Must be written on the certificate"/>
+                                            </div>
+                                            <input type="float" name="hours" class="form-control" id="hours" step="0.1" min="0" required="true"/>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="year_id" class="form-label">Choose year <span class="text-danger">*</span></label>
+                                            <select id="year_id" name="year_id" class="form-select" aria-label="Default select example" required="true">
+                                                <option value="" disabled="true" selected="true">Select your option</option>
+                                                <option t-foreach="training_years" t-as="year" t-key="year.id" t-att-value="year.id">
+                                                    <t t-esc="year.name" />
+                                                </option>
+                                            </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="training_technique_ids" class="form-label">Technique <span class="text-danger">*</span></label>
+                                            <select id="training_technique_ids" name="training_technique_ids" class="form-select" aria-label="Default select example" required="true">
+                                                <option value="" disabled="true" selected="true">Select your option</option>
+                                                <option t-foreach="training_techniques" t-as="technique" t-key="technique.id" t-att-value="technique.id">
+                                                    <t t-esc="technique.name" />
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <input type="submit" class="btn btn-primary" form="training-create-form" value="Save"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="d-flex justify-content-between flex-wrap mb-3">
                     <p class="fs-3">Total hours: <span class="fw-bold" t-out="total_hours" /></p>
