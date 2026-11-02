@@ -65,7 +65,7 @@ class TrainingPortal(CustomerPortal):
     def new_training_session(self, **kwargs):
         partner = request.env.user.partner_id.id
         missing_fields = self._required_training_fields() - kwargs.keys()
-        _logger.info(f"args: {self._required_training_fields()}, kwargs: {kwargs}")
+        _logger.info(f"kwargs: {kwargs}")
         if any(missing_fields):
             raise ValidationError(_("Missing required fields: %s", missing_fields))
         training_technique = request.env['training_technique'].search([('id', '=', kwargs['training_technique_ids'])])
@@ -75,10 +75,12 @@ class TrainingPortal(CustomerPortal):
         if not training_year:
             raise ValidationError(_("Invalid year id: %s", kwargs['year_id']))
         kwargs['partner_id'] = partner
+        file = kwargs.pop('file')
         training_session = request.env['training_session'].sudo().create(kwargs)
         if not training_session:
             raise ValidationError(_("Failed to create training session"))
+        training_session.upload_file(file, training_year.name)
         return request.redirect("/my/training_hours")
 
     def _required_training_fields(self):
-        return ['organisation', 'type', 'hours', 'training_technique_ids', 'year_id']
+        return ['organisation', 'type', 'hours', 'training_technique_ids', 'year_id', 'file']

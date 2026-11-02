@@ -1,10 +1,8 @@
 from odoo import models, fields
 import logging
-import urllib.parse
 import requests
 from requests.utils import requote_uri
 
-from odoo.http import Response
 from odoo.models import BaseModel
 
 _logger = logging.getLogger(__name__)

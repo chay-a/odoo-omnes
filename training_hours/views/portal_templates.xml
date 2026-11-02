@@ -45,7 +45,7 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"/>
                                 </div>
                                 <div class="modal-body">
-                                    <form id="training-create-form" method="POST" action="/my/training/new">
+                                    <form id="training-create-form" method="POST" action="/my/training/new" enctype="multipart/form-data">
                                         <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
                                         <div class="mb-3">
                                             <div class="d-flex gap-1 align-items-center">
@@ -93,6 +93,13 @@
                                                     <t t-esc="technique.name" />
                                                 </option>
                                             </select>
+                                        </div>
+                                        <div class="mb-3">
+                                            <div class="d-flex gap-1 align-items-center">
+                                                <label for="file" class="form-label">Certificate <span class="text-danger">*</span></label>
+                                                <i class="fa fa-question-circle text-primary form-label" aria-hidden="true" data-bs-toggle="tooltip" title="Authorised extensions: .pdf, .png, .jpg, .jpeg; Max size : 2MB"/>
+                                            </div>
+                                            <input type="file" name="file" class="form-control" id="file" required="true" accept=".pdf,.png,.jpg,.jpeg"/>
                                         </div>
                                     </form>
                                 </div>
