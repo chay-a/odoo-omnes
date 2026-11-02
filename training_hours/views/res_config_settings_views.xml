@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.inherit.nextcloud_training_folder</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="10"/>
+        <field name="inherit_id" ref="nextcloud_teams.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='nextcloud_credentials']" position="after">
+                <block title="Nextcloud training folders" name="nextcloud_training_folders">
+                    <setting string="Nextcloud initial training folder URL">
+                        <field name="nextcloud_initial_training_folder_url" />
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>
