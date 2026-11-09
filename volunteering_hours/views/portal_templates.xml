@@ -8,10 +8,10 @@
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Volunteering</t>
                 <t t-set="url" t-value="'/my/volunteering'"/>
-<!--                <t-->
-<!--                    t-set="icon"-->
-<!--                    t-value="'/membership_portal/static/icons/portal_icon.svg'"-->
-<!--                />-->
+                <t
+                    t-set="icon"
+                    t-value="'/volunteering_hours/static/icons/portal_icon.svg'"
+                />
                 <t t-set="text">View your volunteering hours</t>
                 <t t-set="placeholder_count">1</t>
                 <t t-set="config_card" t-value="True"/>

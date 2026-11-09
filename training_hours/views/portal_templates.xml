@@ -8,10 +8,10 @@
             <t t-call="portal.portal_docs_entry">
                 <t t-set="title">Training</t>
                 <t t-set="url" t-value="'/my/training_hours'"/>
-<!--                <t-->
-<!--                    t-set="icon"-->
-<!--                    t-value="'/membership_portal/static/icons/portal_icon.svg'"-->
-<!--                />-->
+                <t
+                    t-set="icon"
+                    t-value="'/training_hours/static/icons/portal_icon.svg'"
+                />
                 <t t-set="text">View your training hours</t>
                 <t t-set="placeholder_count">1</t>
                 <t t-set="config_card" t-value="True"/>
