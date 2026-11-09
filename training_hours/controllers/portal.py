@@ -41,7 +41,7 @@ class TrainingPortal(CustomerPortal):
             'year_filter_props': year_filter_props,
             'training_techniques': request.env['training_technique'].search([]),
             'training_years': request.env['training_year'].search([]),
-            'training_types': [("lifelong_learning", "Lifelong Learning"), ("initial_learning", "Initial Learning")],
+            'training_types': [("lifelong_learning", _("Lifelong Learning")), ("initial_learning", _("Initial Learning"))],
             'page': 'my_training_hours'
         }
         return request.render("training_hours.portal_my_training", values)

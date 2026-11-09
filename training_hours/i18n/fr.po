@@ -1,0 +1,438 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* training_hours
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-11-09 12:00+0000\n"
+"PO-Revision-Date: 2026-11-09 12:00+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: training_hours
+#: model:ir.model,name:training_hours.model_training_session
+msgid "Training Session"
+msgstr "Session de formation"
+
+#. module: training_hours
+#: model:ir.model,name:training_hours.model_training_technique
+msgid "Training Technique"
+msgstr "Technique de formation"
+
+#. module: training_hours
+#: model:ir.model,name:training_hours.model_training_year
+msgid "Training Year"
+msgstr "Année de formation"
+
+#. module: training_hours
+#: model:ir.model,name:training_hours.model_res_partner
+msgid "Contact"
+msgstr "Contact"
+
+#. module: training_hours
+#: model:ir.model,name:training_hours.model_res_config_settings
+msgid "Config Settings"
+msgstr "Paramètres de configuration"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__organisation
+msgid "Organisation"
+msgstr "Organisation"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__type
+msgid "Type"
+msgstr "Type"
+
+#. module: training_hours
+#: model:ir.model.fields.selection,name:training_hours.selection__training_session__type__lifelong_learning
+msgid "Lifelong Learning"
+msgstr "Formation continue"
+
+#. module: training_hours
+#: model:ir.model.fields.selection,name:training_hours.selection__training_session__type__initial_learning
+msgid "Initial Learning"
+msgstr "Formation initiale"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__hours
+msgid "Hours"
+msgstr "Heures"
+
+#. module: training_hours
+#: model:ir.model.fields,help:training_hours.field_training_session__hours
+msgid "ex. 2,5 for 2 hours and 30 minutes"
+msgstr "ex. 2,5 pour 2 heures et 30 minutes"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__year_id
+msgid "Year"
+msgstr "Année"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__training_technique_ids
+msgid "Training techniques"
+msgstr "Techniques de formation"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__partner_id
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__nextcloud_file_url
+msgid "Nextcloud file URL"
+msgstr "URL du fichier Nextcloud"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__display_name
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__display_name
+#: model:ir.model.fields,field_description:training_hours.field_training_year__display_name
+msgid "Display Name"
+msgstr "Nom affiché"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__id
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__id
+#: model:ir.model.fields,field_description:training_hours.field_training_year__id
+msgid "ID"
+msgstr "ID"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__create_uid
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__create_uid
+#: model:ir.model.fields,field_description:training_hours.field_training_year__create_uid
+msgid "Created by"
+msgstr "Créé par"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__create_date
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__create_date
+#: model:ir.model.fields,field_description:training_hours.field_training_year__create_date
+msgid "Created on"
+msgstr "Date de création"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__write_uid
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__write_uid
+#: model:ir.model.fields,field_description:training_hours.field_training_year__write_uid
+msgid "Last Updated by"
+msgstr "Dernière mise à jour par"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_session__write_date
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__write_date
+#: model:ir.model.fields,field_description:training_hours.field_training_year__write_date
+msgid "Last Updated on"
+msgstr "Dernière mise à jour le"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__name
+#: model:ir.model.fields,field_description:training_hours.field_training_year__name
+msgid "Name"
+msgstr "Nom"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_training_technique__sequence
+#: model:ir.model.fields,field_description:training_hours.field_training_year__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_res_config_settings__nextcloud_initial_training_folder_path
+msgid "Nextcloud initial training folder path"
+msgstr "Chemin du dossier Nextcloud de formation initiale"
+
+#. module: training_hours
+#: model:ir.model.fields,field_description:training_hours.field_res_config_settings__nextcloud_lifelong_training_folder_path
+msgid "Nextcloud initial lifelong folder path"
+msgstr "Chemin du dossier Nextcloud de formation continue"
+
+#. module: training_hours
+#: model:ir.ui.menu,name:training_hours.training_menu_action
+msgid "Training"
+msgstr "Formation"
+
+#. module: training_hours
+#: model:ir.ui.menu,name:training_hours.training_session_menu_action
+msgid "Training Session"
+msgstr "Sessions de formation"
+
+#. module: training_hours
+#: model:ir.ui.menu,name:training_hours.training_configuration
+msgid "Configuration"
+msgstr "Configuration"
+
+#. module: training_hours
+#: model:ir.ui.menu,name:training_hours.training_technique_menu_action
+msgid "Training Technique"
+msgstr "Techniques de formation"
+
+#. module: training_hours
+#: model:ir.ui.menu,name:training_hours.training_year_menu_action
+msgid "Training Year"
+msgstr "Années de formation"
+
+#. module: training_hours
+#: model:ir.actions.act_window,name:training_hours.training_session_action
+msgid "Training Session"
+msgstr "Sessions de formation"
+
+#. module: training_hours
+#: model:ir.actions.act_window,name:training_hours.training_technique_action
+msgid "Training Technique"
+msgstr "Techniques de formation"
+
+#. module: training_hours
+#: model:ir.actions.act_window,name:training_hours.training_year_action
+msgid "Training Year"
+msgstr "Années de formation"
+
+#. module: training_hours
+#: model:ir.cron,name:training_hours.ir_cron_create_nextcloud_folder
+msgid "Training Certificate: create nextcloud folder"
+msgstr "Attestation de formation : créer le dossier Nextcloud"
+
+#. module: training_hours
+#: model:ir.cron,name:training_hours.ir_cron_create_nextcloud_folder_by_taining_year
+msgid "Lifelong Training Certificate: create nextcloud folder"
+msgstr "Attestation de formation continue : créer le dossier Nextcloud"
+
+#. module: training_hours
+#: model:ir.cron,name:training_hours.ir_cron_create_new_year
+msgid "Training Year: add current year"
+msgstr "Année de formation : ajouter l'année en cours"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.training_session_tree
+msgid "Training Session"
+msgstr "Sessions de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.training_technique_tree
+msgid "Training Technique"
+msgstr "Techniques de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.training_year_tree
+msgid "Training Year"
+msgstr "Années de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.res_config_settings_view_form
+msgid "Nextcloud training folders"
+msgstr "Dossiers Nextcloud de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.res_config_settings_view_form
+msgid "Nextcloud initial training folder path"
+msgstr "Chemin du dossier Nextcloud de formation initiale"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.res_config_settings_view_form
+msgid "Nextcloud lifelong training folder path"
+msgstr "Chemin du dossier Nextcloud de formation continue"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_home_training
+msgid "Portal : Training"
+msgstr "Portail : Formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_home_training
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training_breadcrumbs
+msgid "Training"
+msgstr "Formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_home_training
+msgid "View your training hours"
+msgstr "Consulter vos heures de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training_breadcrumbs
+msgid "My Training: Breadcrumbs"
+msgstr "Ma formation : Fil d'Ariane"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "My Training"
+msgstr "Ma formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Trainings"
+msgstr "Formations"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Add"
+msgstr "Ajouter"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Add new training time"
+msgstr "Ajouter une session de formation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Close"
+msgstr "Fermer"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Organisation"
+msgstr "Organisation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Organisation <span class=\"text-danger\">*</span>"
+msgstr "Organisation <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Training organisation (must be written on the certificate)"
+msgstr "Organisme de formation (doit figurer sur l'attestation)"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Type"
+msgstr "Type"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Type <span class=\"text-danger\">*</span>"
+msgstr "Type <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Lifelong Learning"
+msgstr "Formation continue"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Initial Learning"
+msgstr "Formation initiale"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Hours"
+msgstr "Heures"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Hours <span class=\"text-danger\">*</span>"
+msgstr "Heures <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Must be written on the certificate"
+msgstr "Doit figurer sur l'attestation'"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Choose year"
+msgstr "Choisir l'année"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Choose year <span class=\"text-danger\">*</span>"
+msgstr "Choisir l'année <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Select your option"
+msgstr "Sélectionnez votre option"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "<option value=\"\" disabled=\"true\" selected=\"true\">Select your option</option>"
+msgstr "<option value=\"\" disabled=\"true\" selected=\"true\">Sélectionnez votre option</option>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Technique"
+msgstr "Technique"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Technique <span class=\"text-danger\">*</span>"
+msgstr "Technique <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Certificate"
+msgstr "Attestation"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Certificate <span class=\"text-danger\">*</span>"
+msgstr "Attestation <span class=\"text-danger\">*</span>"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Authorised extensions: .pdf, .png, .jpg, .jpeg; Max size : 2MB"
+msgstr "Extensions autorisées : .pdf, .png, .jpg, .jpeg ; Taille max : 2 Mo"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Save"
+msgstr "Enregistrer"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Total hours:"
+msgstr "Total des heures :"
+
+#. module: training_hours
+#: model_terms:ir.ui.view,arch_db:training_hours.portal_my_training
+msgid "Total hours: <span class=\"fw-bold\" t-out=\"total_hours\" />"
+msgstr "Total des heures : <span class=\"fw-bold\" t-out=\"total_hours\" />"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/controllers/portal.py:0
+msgid "All Years"
+msgstr "Toutes les années"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/controllers/portal.py:0
+msgid "Missing required fields: %s"
+msgstr "Champs obligatoires manquants : %s"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/controllers/portal.py:0
+msgid "Invalid technique id: %s"
+msgstr "Identifiant de technique non valide : %s"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/controllers/portal.py:0
+msgid "Invalid year id: %s"
+msgstr "Identifiant d'année non valide : %s"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/controllers/portal.py:0
+msgid "Failed to create training session"
+msgstr "Échec de la création de la session de formation"
+
+#. module: training_hours
+#. odoo-python
+#: code:addons/training_hours/models/training_year.py:0
+msgid "Error while creating Training Year"
+msgstr "Erreur lors de la création de l'année de formation"
+
+#. module: training_hours
+#. odoo-javascript
+#: code:addons/training_hours/static/src/public_components/delete_button.xml:0
+msgid "Delete"
+msgstr "Supprimer"
