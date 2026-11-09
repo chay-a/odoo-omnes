@@ -17,4 +17,5 @@
             "volunteering_hours/static/src/public_components/**/*",
         ],
     },
+    "icon": "/volunteering_hours/static/description/icon.png",
 }

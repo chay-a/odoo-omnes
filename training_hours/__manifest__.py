@@ -20,4 +20,5 @@
             "training_hours/static/src/public_components/**/*",
         ],
     },
+    "icon": "/training_hours/static/description/icon.png",
 }
