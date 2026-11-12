@@ -1,7 +1,7 @@
 {
    'name': 'Training Hours',
    'version': '18.0.0.0.1',
-   'depends': ['base','portal', 'membership'],
+   'depends': ['portal', 'membership', 'nextcloud_settings_entry'],
     "application": True,
     "installable": True,
     "data": [
