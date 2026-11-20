@@ -8,11 +8,22 @@
                     <span t-out="record.date_begin"
                           t-options="{'widget': 'datetime', 'date_only': 'true', 'format': 'long', 'tz_name': record.date_tz}"/>
                 </time>
-                <span class="text-white"> - </span>
-                <time t-att-datetime="record.date_begin" class="text-white">
-                    <span t-out="record.date_end"
-                          t-options="{'widget': 'datetime', 'date_only': 'true', 'format': 'long', 'tz_name': record.date_tz}"/>
-                </time>
+                <t t-set="date_begin" t-value="record.date_begin.strftime('%Y-%m-%d')"/>
+                <t t-set="date_end" t-value="record.date_end.strftime('%Y-%m-%d')"/>
+                <t t-if="date_begin != date_end">
+                    <span class="text-white"> - </span>
+                    <time t-att-datetime="record.date_begin" class="text-white">
+                        <span t-out="record.date_end"
+                              t-options="{'widget': 'datetime', 'date_only': 'true', 'format': 'long', 'tz_name': record.date_tz}"/>
+                    </time>
+                </t>
+                <t t-else="">
+                    <span t-if="events_event_time_active" class="s_events_event_time text-white">
+                        <span t-out="record.date_begin" t-options="{'widget': 'datetime', 'time_only': 'true', 'format': 'short', 'tz_name': record.date_tz}"/>
+                        - <span t-out="record.date_end" t-options="{'widget': 'datetime', 'time_only': 'true', 'format': 'short', 'tz_name': record.date_tz}"/>
+                        (<span t-out="record.date_tz.replace('_', ' ')"/>)
+                    </span>
+                </t>
             </div>
         </xpath>
     </template>
