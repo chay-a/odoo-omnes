@@ -19,6 +19,8 @@ class TrainingSession(models.Model):
     )
     partner_id = fields.Many2one("res.partner", string="Partner", required=True)
     nextcloud_file_url = fields.Char(string="Nextcloud file URL")
+    share_file_source = fields.Char(string="Share file source")
+
 
     def upload_file(self, file, training_year = False):
         file_name = file.filename
@@ -43,7 +45,7 @@ class TrainingSession(models.Model):
             file_path = f"{file_path}/{requote_uri(file_name)}"
             self._share_file(file_path, self.partner_id.user_ids.oauth_uid, share_type="0", share_permissions="1")
             self._share_file(file_path, 'admin', share_type="1", share_permissions="31")
-            self.write({'nextcloud_file_url': f"{self._get_partner_folder(self.partner_id)}/{requote_uri(file_name)}"})
+            self.write({'nextcloud_file_url': f"{url}/{requote_uri(file_name)}"})
         except requests.exceptions.HTTPError as e:
             _logger.error(f"Error creating nextcloud file {url}: {e}")
 
@@ -90,8 +92,15 @@ class TrainingSession(models.Model):
         )
         try:
             response.raise_for_status()
+            _logger.info(f"Nextcloud share created: {response.text}")
+            response_text = ET.fromstring(response.text)
+            data = response_text.find("data")
+            self.share_file_source = data.find('file_source').text
         except requests.exceptions.HTTPError as e:
-            _logger.error(f"Error creating nextcloud folder {url} / {file_path}: {e}")
+            _logger.error(f"Error creating nextcloud share {url} / {file_path}: {e}")
+
+    def get_share_url(self):
+        return f"{self.env['ir.config_parameter'].sudo().get_param('nextcloud_teams.nextcloud_url')}/f/{self.share_file_source}"
 
     def delete_file(self):
         response = requests.delete(

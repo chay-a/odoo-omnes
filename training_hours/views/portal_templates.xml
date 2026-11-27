@@ -119,7 +119,7 @@
                 <div class="row gap-3 justify-content-center">
                     <t t-foreach="training_sessions" t-as="training">
                         <div class="col-11 col-sm-5 col-md-3 border border-gray-100 rounded-2 d-flex- flex-column align-items-center p-2">
-                            <p t-out="training.organisation" class="text-truncate text-uppercase" t-att-title="training.organisation"/>
+                            <a t-att-href="training.get_share_url()" target="_blank" t-out="training.organisation" class="text-truncate text-uppercase" t-att-title="training.organisation"/>
                             <div class="d-flex gap-1 text-primary">
                                 <p t-field="training.hours" t-options="{'widget': 'float_time'}"/>
                             </div>
