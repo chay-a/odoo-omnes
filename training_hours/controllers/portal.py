@@ -56,6 +56,7 @@ class TrainingPortal(CustomerPortal):
     def delete_training_session(self, id=0, **kwargs):
         training_session = request.env['training_session'].browse(id)
         if training_session:
+            training_session.delete_file()
             training_session.unlink()
         return {
             'redirect_url': "/my/training_hours",
